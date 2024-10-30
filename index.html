@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio </title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+     <!-- icon -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 1000;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+                                    /* Smooth transition */
+                                    transition: color 3s ease, background-color 3s ease;
+        }
+        .topnav {
+            display: flex;          /* Use Flexbox for layout */
+            /*justify-content: space-between; /* Space between title and links */
+            align-items: center;    /* Vertically center content */
+            /*Padding around navbar */
+            /* background-color: black;  */
+            /* Navbar background color */
+        }
+        .topnav > a {
+            text-decoration: none;
+            color: white;
+            /* margin-left: 20px; Space between links */
+            /* font-weight: 400; */
+            padding: 20px 40px; 
+            font-size: 18px;
+        }
+        .topnav  a:hover {
+             /* Optional: Changes color on hover */
+            color: red;
+            transition: color 0.5s;
+        }
+        .tra {
+            font-size: 24px;
+            padding-right: 600px;
+            padding-left: 50px;
+            /* font-weight: 600; */
+        }
+
+        /* General styles for the section */
+        .hero {
+        /* background-color: blue; */
+        max-width: 1250px;
+        height: 600px; /*Fixed height */ 
+        margin: 0px 50px 0px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        /* border: 1px solid white; */
+        border-radius: 50px;
+        /* box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); */
+        box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
+        }
+
+
+        /* Container to organize left and right sides */
+        .container {
+        display: flex;
+        /* justify-content: space-between; */
+        /* align-items: center; */
+        /* Adjust based on your layout preference */
+        width: 80%; 
+        /* max-width: 1250px; */
+        /* Space between left and right */
+        gap: 20px; 
+        }
+
+        /* Left and Right sides */
+        .left {
+        flex: 1;
+        padding-left: 50px;
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px;
+        }
+
+        .left p {
+            margin: 0px;
+            line-height: 0.1;
+        }
+
+        .left h1 {
+            line-height: 0.5;
+        }
+
+        .left h1 span {
+            color: red;
+        }
+
+        .icon-container i {
+            width: 0 auto;
+            height: 0 auto;
+            /* margin-top: 30px; */
+            /* font-size: 30px; */
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            color: white;
+            /* transition: color 0.3s; */
+            transition: transform 0.3s, color 0.3s;
+            overflow: hidden; /* Ensures any scaling doesn't affect other elements */
+        }
+        .icon-container a {
+            text-decoration: none; /* Removes underline from links */
+        }
+        .icon-container i:hover {
+            cursor: pointer;
+            color: red;
+            /* transition: 0.5s; */
+            transform: scale(1.3);
+            border-color: 1px white;
+            /* transform: scale(1); */
+        }
+
+        .right {
+        flex: 1  ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+
+        /* Image styling */
+        .right .image {
+        margin: 0px 100px;
+        max-width: 100%;
+        border-radius: 30px; /* Optional */
+        /* box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.8); */
+        }
+
+        .about {
+            max-width: 1250px;
+            height: 600px; /*Fixed height */ 
+            margin: 50px 50px 0px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            /* border: 1px solid white; */
+            border-radius: 50px;
+            box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
+            /* box-shadow: 0 0 20px 5px rgba(0, 153, 255, 0.8); */
+        }
+
+        .about-left {
+            flex: 1  ;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .about-left .image {
+            margin: 0px 100px;
+            border-radius: 50%; /* Optional */
+            object-fit: cover;
+            width: 300px;
+            height: 300px;
+            box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.8);
+            /* -webkit-box-reflect: below -50% linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4)); */
+        }
+
+        .about-right {
+            flex: 1;
+            letter-spacing: 3px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            position: relative;
+            margin-top: -50px;
+            gap: 20px;
+        }
+
+        .about-right p {
+            margin: 0px;
+            margin-top: -30px;
+            padding: 0px;         
+            /* line-height: 3; */
+        }
+        .about-right h1 {
+            /* margin-top: 20px; */
+            font-size: 50px;
+            /* text-decoration: underline; */
+            text-transform: uppercase;
+            color: red;
+        }
+
+        .skill {
+            max-width: 1250px;
+            height: 600px; /*Fixed height */ 
+            margin: 50px 50px 0px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            /* border: 1px solid white; */
+            border-radius: 50px;
+            box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
+            /* box-shadow: 0 0 20px 5px rgba(0, 153, 255, 0.8); */
+        }
+
+        .skill-left {
+        flex: 1;
+        padding-left: 50px;
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        font-family: 'Poppins', sans-serif;
+        /* moving stuf insdie abit right */
+        margin-left: 50px;
+        /* font-size: 30px; */
+        }
+
+        .skill h2 {
+            /* using relative so the other element wont be affect */
+            position: relative;
+            top: -30px;
+            font-size: 30px;
+        }
+
+        /* Progress container */
+        .progress {
+            /* Background of the progress bar */
+            background-color: #2B2B2B; 
+            border-radius: 20px;
+            /* position: relative; */
+            height: 20px;
+            /* width: 80%; */
+            /* margin-left: 50px; */
+        }
+        /* Progress fill */
+        .progress-bar {
+            /* Color of the progress fill */
+            /* background-color: #00d9ff;  */
+            /* height: 100%; */
+            border-radius: 20px;
+            text-align: right;
+            padding-right: 10px;
+            color: black;
+            font-size: 14px;
+             /* Vertically center the percentage text */
+            line-height: 20px;
+        }
+        .progress-bar:hover {
+            cursor: pointer;
+            filter: brightness(1.2);
+        }
+
+        .progress-bar.html { background-color: #ff2f00; }
+        .progress-bar.css { background-color: #8400ff; }
+        .progress-bar.cpp { background-color: #ae006c; }
+        
+        .progress-bar.creativity { background-color: #FFFF00; }
+        .progress-bar.teamwork { background-color:  #1E90FF; }
+        .progress-bar.communication { background-color:  #32CD32; }
+
+        .skill-right {
+        flex: 1;
+        padding-left: 50px;
+        letter-spacing: 5px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        text-align: left;
+        font-family: 'Poppins', sans-serif;
+        /* moving stuf insdie abit right */
+        margin-left: 50px;
+        /* font-size: 30px; */
+        }
+
+        .dark-mode .progress {
+            background-color: lightslategrey;
+        }
+        .dark-mode .progress-bar.html{ background-color: #f88b73;}
+        .dark-mode .progress-bar.css { background-color: #b47be9;}
+        .dark-mode .progress-bar.cpp { background-color: #d488e5;}
+        .dark-mode .progress-bar.creativity { background-color: #f6f6a0;}
+        .dark-mode .progress-bar.teamwork { background-color: #94c2f0;}
+        .dark-mode .progress-bar.communication { background-color: rgb(164, 237, 164);}
+
+
+        .project {
+            max-width: 1250px;
+            /*Fixed height */ 
+            height: 700px; 
+            margin: 50px 50px 0px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* justify-content: space-around; */
+            padding: 20px;
+            /* border: 1px solid white; */
+            border-radius: 50px;
+            box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
+            /* box-shadow: 0 0 20px 5px rgba(0, 153, 255, 0.8); */
+        }
+        .project .container {
+            margin-left: 70px;
+            margin-right: 70px;
+            /* Aligns cards in a row */
+            display: flex; 
+             /* Allows cards to move to the next row if they don't fit */  
+            flex-wrap: wrap;        
+             /* Even spacing between cards */    
+            justify-content: space-around; 
+            /* Optional: Adds space between cards */
+            gap: 50px;    
+            margin: 0px 125px; 
+        }
+        /* Styling for each card */
+        .card {
+            width: 1250px;
+            /* height: 900px; */
+            position: relative;
+            margin: 0px 100px;
+            top: -40px;
+            border-radius: 15px;
+            /* overflow: hidden; */
+            /* box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.8); */
+            /* text-align: center; */
+            text-align: center;
+            /* background-color: #ffffff; */
+            /* border: 3px solid white; */
+        }
+        .card img {
+            top: 30px;
+            position: relative;
+        }
+        .project .container h2 {
+            font-size: 30px;
+            position: relative;
+            /* margin-top: 30px; */
+            top: 30px;
+        }
+
+
+        /* Dark Mode Styles */
+        #toggleDarkMode {
+            /* position: absolute; */
+            width: 100px;
+            height: 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 2px solid black; 
+        }
+        #toggleDarkMode:hover {
+            /* transition: 0.3s; */
+            background-color: red;
+            /* border-color: red; */
+        }
+        .dark-mode {
+            /* transition: 2s; */
+            background-color: white;
+            color: black;
+        }
+        .dark-mode .topnav p, .dark-mode .topnav a {
+            color: black;
+        }
+        .dark-mode .hero {
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8);
+        }
+        .dark-mode .hero i {
+            color: black;
+        }
+        .dark-mode .about {
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8);
+        }
+        .dark-mode .skill {
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8);
+        }
+        .dark-mode .project {
+            box-shadow: 0 0 20px 5px rgb(0, 0, 0, 0.8)
+        }
+
+        table {
+            /* width: 100%; */
+            margin: 0 auto;
+            /* margin: 0px 100px; */
+            border-collapse: collapse;
+        }
+        tr {
+            /* height: 400px; */
+        }
+        td {
+            padding: 15px;
+            /* text-align: center; */
+            vertical-align: top;
+        }
+        img {
+            position: relative;
+            text-align: center;
+            /* width: 200px;
+            height: 200px; */
+            /* Make the image fit the container */
+            width: 100%;             
+            height: 100%; 
+             /* Ensure the image scales correctly */
+            object-fit: cover;      
+            border-radius: 10px;
+            /* box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.8); */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* On hover effect for cards */
+        img:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.5);
+        }
+        .dark-mode img:hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 25px 10px rgb(0, 0, 0);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <navbar>
+        <section class="topnav">
+            <p class="tra">P.Tra</p>
+            <a class="topnav-active" href="#">Home</a>
+            <a class="topnavnews" href="#">News</a>
+            <a class="topnavcontact" href="#">Contact</a>
+            <a class="topnavabout" href="#">About</a>
+        </section> 
+    </navbar>
+
+    <section class="hero">
+        <div class="container">
+          <div class="left">
+            <p>Hello,</p>
+            <h1>I'm <span>SoPheakTra</span></h1>
+            <p>Web Developer</p>
+            <!-- <i class="fa-brands fa-github"></i> -->
+             <br>
+            <span class="icon-container">
+                <a href="https://github.com/pheaktraa" target="_blank" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100012999960863&mibextid=ZbWKwL" target="_blank" aria-label="Facebook">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://instagram.com/yuutaa0987" target="_blank" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </span>
+            <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
+            <button id="toggleDarkMode">Color Mode</button>
+          </div>
+          <div class="right">
+            <img class="image" src="images/anime.yuta.jjk.jpg" alt="anime yuta" />
+          </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-left">
+                <img class="image" src="images/anime.yuta.jjk.jpg" alt="anime yuta" />
+            </div>
+            <div class="about-right">
+                <h1>About Me</h1>
+                <p>My name is <strong>Nhor Soksopheaktra</strong>, a 20-year-old student currently pursuing a Bachelor’s degree in <strong>Information Technology Engineering (ITE)</strong> at the <strong>Royal University of Phnom Penh (RUPP)</strong>.</p>              
+            </div>
+          </div>
+    </section>
+      
+    <section class="skill">
+        <div class="container">
+            <div class="skill-left">
+                <h2>Technical Skills</h2>
+                <p>HTML</p>
+                <div class="progress">
+                    <div class="progress-bar html" style="width: 90%;">90%</div>
+                </div>
+                <p>CSS</p>
+                <div class="progress">
+                    <div class="progress-bar css" style="width: 90%;">90%</div>
+                </div>
+                <p>C++</p>
+                <div class="progress">
+                    <div class="progress-bar cpp" style="width: 90%;">90%</div>
+                </div>
+            </div>
+            <div class="skill-right">
+                <h2>Personal Skills</h2>
+                <p>Creativity</p>
+                <div class="progress">
+                    <div class="progress-bar creativity" style="width: 90%;">90%</div>
+                </div>
+                <p>TeamWork</p>
+                <div class="progress">
+                    <div class="progress-bar teamwork" style="width: 90%;">90%</div>
+                </div>
+                <p>Communication</p>
+                <div class="progress">
+                    <div class="progress-bar communication" style="width: 90%;">90%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="project">
+        <div class="container">
+            <h2>My Projects</h2>
+          <!-- <div class="left"></div>
+          <div class="right"> </div> -->
+          <!-- <div class="card">
+            <img src="images/anime.yuta.jjk.jpg" alt="yuta" />
+          </div>
+          <div class="card">
+            <img src="images/anime.yuta.jjk.jpg" alt="yuta" />
+          </div>
+          <div class="card">
+            <img src="images/anime.yuta.jjk.jpg" alt="yuta" />
+          </div>
+        </div> -->
+        
+        <table class="card">
+            <tr>
+                <td>
+                    <img src="images/anime.yuta.jjk.jpg" alt="Flower 1">
+                    <!-- <div class="overlay-text">Your Text Here</div> -->
+                </td>
+                <td>
+                    <img src="images/anime.yuta.jjk.jpg" alt="Flower 2">
+                    <!-- <div class="overlay-text">Your Text Here</div> -->
+                </td>
+                <td >
+                    <img src="images/anime.yuta.jjk.jpg" alt="Flower 3">
+                    <!-- <p>Elegant Orchids</p> -->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="images/anime.yuta.jjk.jpg" alt="Flower 1">
+                    <!-- <p>Fresh Bouquets</p> -->
+                </td>
+                <td >
+                    <img src="images/anime.yuta.jjk.jpg" alt="Flower 2">
+                    <!-- <p>Beautiful Blooms</p> -->
+                </td>
+                <td >
+                    <img src="images/anime.yuta.jjk.jpg" alt="Flower 3">
+                    <!-- <p>Elegant Orchids</p> -->
+                </td>
+            </tr>
+        </table>
+        </div>
+    </section>
+   
+
+    <section class="about">
+        <div class="container">
+            <div class="about-left">
+                <img class="image" src="images/anime.yuta.jjk.jpg" alt="anime yuta" />
+            </div>
+            <div class="about-right">
+                <h1>About Me</h1>
+                <p>My name is <strong>Nhor Soksopheaktra</strong>, a 20-year-old student currently pursuing a Bachelor’s degree in <strong>Information Technology Engineering (ITE)</strong> at the <strong>Royal University of Phnom Penh (RUPP)</strong>.</p>              
+            </div>
+          </div>
+    </section>
+
+    <script>
+        // function myFunction() {
+        //    var element = document.body;
+        //    element.classList.toggle("dark-mode");
+        // }
+        const toggleButton = document.getElementById('toggleDarkMode');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+        </script>
+</body>
+</html>
